@@ -21,7 +21,13 @@ module.exports.getBSD = () => {
             reject("No results returned");
         }
         else {
-            resolve(students);
+            var BSDstudents = []
+            for (var i = 0; i < students.length; i++) { // this need to do BSD students (prof feedback)
+                if (students[i].program == "BSD") {
+                    BSDstudents.push(students[i]);
+                }
+            }
+            resolve(BSDstudents);
         }
     })
 }
